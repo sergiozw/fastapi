@@ -15,14 +15,30 @@ def get_db():
         db.close()
 
 
+##############################################
+import os
+import re
+
+try:
+    uri = os.getenv("DATABASE_URL")  # or other relevant config var
+    if uri.startswith("postgres://"):
+        uri = uri.replace("postgres://", "postgresql://", 1)
+    # rest of connection code using the connection string `uri`
+except:
+    pass
+##############################################
+
+
+print (f'uri:{uri}')
 
 SQLALCHEMY_DATABASE_URL = f'postgresql://{settings.database_username}:{settings.database_password}@{settings.database_hostname}:{settings.database_port}/{settings.database_name}'
 
-
 SQLALCHEMY_DATABASE_URL = f'postgresql://postgres:postgres@localhost:5432/dad_db2'
 
-
 # SQLALCHEMY_DATABASE_URL = 'postgresql://drqprjkfyuafzh:6a051c96bd983aacadc9d459201e9a28b080c6e6c6ffdc15ff2fd61a16e6a9d3@ec2-3-230-199-240.compute-1.amazonaws.com:5432/d1j26patssms9f'
+
+SQLALCHEMY_DATABASE_URL = uri
+
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
