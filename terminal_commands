@@ -2,6 +2,3 @@ git add --all; git commit -m "next commit"; git push origin main; git push herok
 
 heroku ps:restart; heroku logs -t
 
-
-
-git add --all; git commit -m "next commit"; git push origin main; git push heroku main;heroku ps:restart; heroku logs -t
