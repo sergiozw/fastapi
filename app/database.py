@@ -22,7 +22,7 @@ SQLALCHEMY_DATABASE_URL = f'postgresql://{settings.database_username}:{settings.
 SQLALCHEMY_DATABASE_URL = f'postgresql://postgres:postgres@localhost:5432/dad_db2'
 
 
-SQLALCHEMY_DATABASE_URL = 'postgresql://drqprjkfyuafzh:6a051c96bd983aacadc9d459201e9a28b080c6e6c6ffdc15ff2fd61a16e6a9d3@ec2-3-230-199-240.compute-1.amazonaws.com:5432/d1j26patssms9f'
+# SQLALCHEMY_DATABASE_URL = 'postgresql://drqprjkfyuafzh:6a051c96bd983aacadc9d459201e9a28b080c6e6c6ffdc15ff2fd61a16e6a9d3@ec2-3-230-199-240.compute-1.amazonaws.com:5432/d1j26patssms9f'
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
