@@ -5,7 +5,7 @@ from sqlalchemy.sql.sqltypes import TIMESTAMP
 
 from .database import Base
 
-
+print('MODELS_1')
 class Post(Base):
     __tablename__ = "posts"
 
@@ -20,7 +20,9 @@ class Post(Base):
 
     owner = relationship("User")
 
+    print('MODELS_1.2')
 
+print('MODELS_2')
 class User(Base):
     __tablename__ = "users"
     id = Column(Integer, primary_key=True, nullable=False)
@@ -36,3 +38,13 @@ class Vote(Base):
         "users.id", ondelete="CASCADE"), primary_key=True)
     post_id = Column(Integer, ForeignKey(
         "posts.id", ondelete="CASCADE"), primary_key=True)
+
+
+
+class dadTable3(Base):
+    __tablename__ = "dadTable3"
+
+    id = Column(Integer, primary_key=True, nullable=False)
+    title = Column(String, nullable=False)
+    content = Column(String, nullable=False)
+    published = Column(Boolean, server_default='TRUE', nullable=False)
